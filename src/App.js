@@ -17,6 +17,7 @@ function App() {
     <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
+      <h1 style={{color:'red',marginTop:'100px', marginBottom:'200px'}} onClick={()=>console.log('hice click')}>CODERHOUSE</h1>
       <Avatarjsx id={2} name={"seba"}/>
       <Avatarjsx id={3} name={"dani"}/>
       <Avatarjsx id={4} name={"nico"}/>
