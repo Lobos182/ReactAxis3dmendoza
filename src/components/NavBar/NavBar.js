@@ -1,18 +1,19 @@
 import './NavBar.css'
+import logo from '../../../src/logo.svg';
 
 
 const NavBar = () => {
 
 
     return (
-        <nav class="navbar">
-            <a class="navbar-logo" href="#!">
-                <img src="" alt='logo empresa'/>
+        <nav className="navbar">
+            <a className="navbar-logo" href="#!">
+                <img src={logo} alt='logo empresa'/>
             </a>
-            <ul class="menu">
-                <li><a href="#!">Productos</a></li>
-                <li><a href="#!">Nosotros</a></li>
-                <li><a href="#!">Carrito</a></li>
+            <ul className="menu">
+                <li><a href="#!" onClick={()=>console.log('hice click en Productos')}>Productos</a></li>
+                <li><a href="#!" onClick={()=>console.log('hice click en Nosotros')}>Nosotros</a></li>
+                <li><a href="#!" onClick={()=>console.log('hice click en Carrito')}>Carrito</a></li>
                 {/* <li><a href="#!"></a></li> */}
             </ul>
         </nav>
