@@ -1,17 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Button from '../Button/Button'
 
 
 const CountFunction = (props) => { //puedo poner props o cualquier palabra
 
-    //   const state=useState(0)   
-    //    const count = state[0]
-    //    const setCount = state[1]
-
     const [count, setCount] = useState(0)
 
+    console.log(useEffect)
+    useEffect(() => {
+        console.log('me ejecuto despues del montaje')
 
-    //let count = 0
+        return () => {
+            console.log('me ejecuto antes de desmotarme')
+        }
+
+    }, [])
 
     const decrement = () => {
         setCount(count - 1)
@@ -19,6 +22,8 @@ const CountFunction = (props) => { //puedo poner props o cualquier palabra
     const increment = () => {
         setCount(count + 1)
     }
+
+    console.log('ejecuto antes de render')
 
 
     return (
