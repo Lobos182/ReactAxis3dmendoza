@@ -1,11 +1,6 @@
-.carrito{
-display: inline-block;
-
-}
-.iconocarrito{    
-    -webkit-filter: invert(100%);
-   filter: invert(100%);    
-}
-.textocarrito{
-    color: white;
-}
+.cantcarrito{
+    font-size: 2em;
+  }
+  .icono{
+    font-size: 2em;
+  }

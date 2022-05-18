@@ -1,26 +1,53 @@
 import './NavBar.css'
-import logo from '../../../src/logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from '../CartWidget/CartWidget';
+import React, { useState } from 'react';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText } from 'reactstrap';
 
+const NavBar = (props) => {
+    const [collapsed, setCollapsed] = useState(true);
 
-const NavBar = () => {
-
-
+    const toggleNavbar = () => setCollapsed(!collapsed);
+    
     return (
-        <nav className="navbar">
-            <a className="navbar-logo" href="#!">
-                <img src={logo} alt='logo empresa'/>
-            </a>
-            <ul className="menu">
-                <li><a href="#!" onClick={()=>console.log('hice click en Productos')}>Productos</a></li>
-                <li><a href="#!" onClick={()=>console.log('hice click en Nosotros')}>Nosotros</a></li>
-                <li><a href="#!" onClick={()=>console.log('hice click en Carrito')}>Carrito</a></li>                
-            </ul>
-            <div>
-            <CartWidget />
-            </div>
-        </nav>
-    )
+        <div>
+            <Navbar
+                color="dark"
+                dark
+                expand="md"
+                fixed=""
+                full
+            >
+                <NavbarBrand className='' href="/">
+                    <img src='./images/axis3d.jpg' width="80" height="auto" class=" d-inline-block align-text-center" alt='logo' />
+                    Axis3DMendoza
+                </NavbarBrand>
+                <NavbarToggler onClick={toggleNavbar} className="me-2" />
+                <Collapse isOpen={!collapsed} navbar>
+                    <Nav className="mx-auto" navbar>
+                        <NavItem>
+                            <NavLink className='navitem' onClick={()=>console.log('hice click en Productos')} href="#!">
+                            Productos
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className='navitem' onClick={()=>console.log('hice click en Nosotros')} href="#!">
+                            Nosotros
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className='navitem' onClick={()=>console.log('hice click en Contacto')} href="#!">
+                            Contacto
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
+                </Collapse>
+                <NavbarText>
+                    <CartWidget />
+                </NavbarText>
+            </Navbar>
+        </div>
+    );
 }
 
 export default NavBar

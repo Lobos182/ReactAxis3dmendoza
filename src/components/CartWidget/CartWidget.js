@@ -3,9 +3,15 @@ import './CartWidget.css'
 
 const CartWidget = () => {
     return (
-        <div className='carrito'>
-            <img className='iconocarrito' src='./images/Cart.svg' width='60px' height='auto' alt='carrito' />
-            <h2 className='textocarrito'>5</h2>
+        <div>
+            <a type="button" href="#!" onClick={()=>console.log('hice click en Carrito')} class="d-flex">
+                        <button className='btn-outline-dark'>
+                            <i className='bi bi-cart4 me-2 icono'></i>                                                      
+                            <span className='badge bg-dark text-white ms-2 rounded cantcarrito'>
+                                5
+                            </span>
+                        </button>
+                    </a>            
         </div>
             )
 }
