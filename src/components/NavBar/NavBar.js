@@ -43,7 +43,7 @@ const NavBar = (props) => {
                     </Nav>
                 </Collapse>
                 <NavbarText>
-                    <CartWidget />
+                    <CartWidget cart='6'/>
                 </NavbarText>
             </Navbar>
         </div>
