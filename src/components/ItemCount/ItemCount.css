@@ -3,11 +3,12 @@ input {
     border: 1px solid #6C757D;
   }       
   .wrapper {
+    
     border: 2px #dcd3d3 solid;
-    width: auto;
+    width: 200px;
     height: auto;
     padding: 10px;
-    display: flex;
+    display: inline-flex;
     border-radius: 15px;
   }
   
@@ -25,5 +26,10 @@ input {
     width: 39%;
     border: none;
     font-size: 20px;
+  }
+
+  .agregarcarrito{    
+    display: flex;
+
   }
   

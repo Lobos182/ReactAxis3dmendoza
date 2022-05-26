@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />      
-      <ItemListContainer color='Black' greeting="Bienvenidos Axis3DMendoza mi E-commerse"/>   
+      <ItemListContainer  greeting="Bienvenidos Axis3DMendoza mi E-commerse"/>   
       <ItemCount color='blue' stock='10' inicial='0' />   
     </div>
   );
