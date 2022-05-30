@@ -7,7 +7,7 @@ const products = [
         precio: 500,
         categoria: 'animales',
         stock: 10,
-        imagen: 'https://i.ibb.co/W5Ffn7W/dino1.jpg'
+        imagen: './images/productos/dino1.jpg'
     },
     {
         id: '2',
@@ -16,7 +16,7 @@ const products = [
         precio: 1000,
         categoria: 'accesorios',
         stock: 15,
-        imagen: 'https://i.ibb.co/3YGQKb5/pokebola1.jpg'
+        imagen: './images/productos/pokebola1.jpg'
     },
     {
         id: '3',
@@ -25,7 +25,7 @@ const products = [
         precio: 500,
         categoria: 'Figuras',
         stock: 3,
-        imagen: 'https://i.ibb.co/xgJwC0Z/vader1.jpg'
+        imagen: './images/productos/vader1.jpg'
     },
 
 ]
@@ -37,3 +37,11 @@ export const getProducts = () => {
         }, 2000)
     })
 }
+export const getProductsById = (id) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === id))
+        }, 500)
+    })
+}
+
