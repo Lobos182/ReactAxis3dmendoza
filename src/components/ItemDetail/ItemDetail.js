@@ -6,8 +6,10 @@ const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
         <Container>
             <Row>
                 <Col className='bg-light border'
-                    sm="4"
-                    xs="6">
+                    sm="3"
+                    xs="5">
+                    <h2>Detalle del producto</h2>
+                    <h2>{nombre}</h2>
                     <div>
                         <Card>
                             <CardImg

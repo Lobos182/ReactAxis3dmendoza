@@ -1,5 +1,6 @@
 import React from 'react'
 import { CardGroup, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Container, Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const Item = ({ id, nombre, precio, imagen, stock }) => {
 
@@ -39,9 +40,11 @@ const Item = ({ id, nombre, precio, imagen, stock }) => {
                                         stock disponible {stock}
 
                                     </CardSubtitle>
-                                    <Button>
-                                        Ver detalle
-                                    </Button>
+                                    <Link to={`/detalle/${id}`}>
+                                        <Button>
+                                            Ver detalle
+                                        </Button>
+                                    </Link>
                                 </CardBody>
                             </Card>
                         </CardGroup>

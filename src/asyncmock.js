@@ -23,7 +23,7 @@ const products = [
         nombre: 'Darth Vader',
         descripcion: 'Miniatura Darth Vader PLA',
         precio: 500,
-        categoria: 'Figuras',
+        categoria: 'figuras',
         stock: 3,
         imagen: './images/productos/vader1.jpg'
     },
@@ -34,13 +34,21 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 2000)
+        }, 1000)
     })
 }
 export const getProductsById = (id) => {
-    return new Promise (resolve => {
+    return new Promise(resolve => {
         setTimeout(() => {
             resolve(products.find(prod => prod.id === id))
+        }, 500)
+    })
+}
+
+export const getProductsByCategory = (categoriaId) => {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve(products.filter(prod => prod.categoria === categoriaId))
         }, 500)
     })
 }
