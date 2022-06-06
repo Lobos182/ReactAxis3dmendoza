@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <ItemCount color='blue' stock='10' inicial='0' /> */}
       <BrowserRouter>
         <NavBar />
         <Routes>

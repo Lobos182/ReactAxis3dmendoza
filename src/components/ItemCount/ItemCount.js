@@ -1,26 +1,28 @@
 import { useState } from "react"
 import './ItemCount.css'
-import { CardGroup, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
-const ItemCount = (props) => {
-    /*const [count, setCount] = useState(props.inicial)*/
-    const [count, setCount] = useState(0)
+const ItemCount = ({onConfirm, stock, initial = 1}) => {
+
+    const [count, setCount] = useState(initial)
 
     const decrement = () => {
-        if (count <= 0) {
+        if (count <= 1) {
             console.log("No existen los productos negativos :) ")
         } else {
             setCount(count - 1)
         }
     }
+   
     const increment = () => {
-        if (count >= props.stock) {
+        if (count >= stock) {
             console.log("no hay mas Stock")
         } else {
             setCount(count + 1)
         }
-
     }
+
+    
     return (
 
         <div>
@@ -29,7 +31,7 @@ const ItemCount = (props) => {
                 <input type="number" class="num" value={count} />
                 <Button className="plusminus" onClick={increment}>+</Button>
             </div >
-            <Button className="agregarcarrito">
+            <Button className="agregarcarrito" onClick={()=> onConfirm(count)}>
                 Agregar al Carrito
             </Button>
         </div>

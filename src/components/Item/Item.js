@@ -1,6 +1,7 @@
 import React from 'react'
 import { CardGroup, Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Container, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import "./Item.css"
 
 const Item = ({ id, nombre, precio, imagen, stock }) => {
 
@@ -8,16 +9,15 @@ const Item = ({ id, nombre, precio, imagen, stock }) => {
         <Container>
             <Row>
                 <Col className='bg-light border'
-                    sm="4"
-                    xs="6">
+                    fluid>
                     <div>
                         <CardGroup>
                             <Card>
                                 <CardImg
+                                    className='cardImg'
                                     alt="IMAGEN DE LA CARD"
                                     src={imagen}
-                                    top
-                                    width="auto"
+                                    top 
                                 />
                                 <CardBody>
                                     <CardTitle tag="h5">

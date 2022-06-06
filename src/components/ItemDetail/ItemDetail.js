@@ -1,13 +1,23 @@
-import React from 'react'
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, CardText, Button, Container, Row, Col } from 'reactstrap';
+import React, { useState } from 'react'
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle,Button, CardText, Container, Row, Col, CardFooter } from 'reactstrap';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
+
+    const [quantity, setQuantity] = useState(0)
+
+    const OnAdd = (count) => {
+        console.log('Agregue al carrito')
+        console.log(count)
+        setQuantity(count)
+    }
     return (
         <Container>
             <Row>
                 <Col className='bg-light border'
-                    sm="3"
-                    xs="5">
+                    fluid
+                >
                     <h2>Detalle del producto</h2>
                     <h2>{nombre}</h2>
                     <div>
@@ -22,13 +32,6 @@ const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
                                 <CardTitle tag="h5">
                                     {nombre}
                                 </CardTitle>
-                                <CardSubtitle
-                                    className="mb-2 text-muted"
-                                    tag="h6"
-                                >
-                                    id de base de datos {id}
-
-                                </CardSubtitle>
                                 <CardText>
                                     Precio ${precio}
                                 </CardText>
@@ -39,9 +42,13 @@ const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
                                     stock disponible {stock}
 
                                 </CardSubtitle>
-                                <Button>
-                                    Ver detalle
-                                </Button>
+                                <CardFooter>
+                                    {quantity > 0 ? <Link to='/cart'>
+                                        <Button>
+                                        Finalizar compra
+                                    </Button>
+                                    </Link> : <ItemCount stock={stock} onConfirm={OnAdd} />}
+                                </CardFooter>
                             </CardBody>
                         </Card>
                     </div>
