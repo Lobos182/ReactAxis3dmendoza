@@ -2,7 +2,7 @@ import { useState } from "react"
 import './ItemCount.css'
 import { Button } from 'reactstrap';
 
-const ItemCount = ({onConfirm, stock, initial = 1}) => {
+const ItemCount = ({ onConfirm, stock, initial = 1 }) => {
 
     const [count, setCount] = useState(initial)
 
@@ -13,7 +13,7 @@ const ItemCount = ({onConfirm, stock, initial = 1}) => {
             setCount(count - 1)
         }
     }
-   
+
     const increment = () => {
         if (count >= stock) {
             console.log("no hay mas Stock")
@@ -22,7 +22,7 @@ const ItemCount = ({onConfirm, stock, initial = 1}) => {
         }
     }
 
-    
+
     return (
 
         <div>
@@ -31,7 +31,7 @@ const ItemCount = ({onConfirm, stock, initial = 1}) => {
                 <input type="number" class="num" value={count} />
                 <Button className="plusminus" onClick={increment}>+</Button>
             </div >
-            <Button className="agregarcarrito" onClick={()=> onConfirm(count)}>
+            <Button className="agregarcarrito" onClick={() => onConfirm(count)}>
                 Agregar al Carrito
             </Button>
         </div>

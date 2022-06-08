@@ -1,16 +1,24 @@
-import React, { useState } from 'react'
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle,Button, CardText, Container, Row, Col, CardFooter } from 'reactstrap';
+import React, { useState, useContext } from 'react'
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button, CardText, Container, Row, Col, CardFooter } from 'reactstrap';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
 
     const [quantity, setQuantity] = useState(0)
 
+
+    const { addItem, getProductQuantity } = useContext(CartContext)
+
+    const initialValue= getProductQuantity(id)
+
     const OnAdd = (count) => {
         console.log('Agregue al carrito')
         console.log(count)
         setQuantity(count)
+        addItem({ id, nombre, precio, count })
+
     }
     return (
         <Container>
@@ -45,9 +53,9 @@ const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
                                 <CardFooter>
                                     {quantity > 0 ? <Link to='/cart'>
                                         <Button>
-                                        Finalizar compra
-                                    </Button>
-                                    </Link> : <ItemCount stock={stock} onConfirm={OnAdd} />}
+                                            Finalizar compra
+                                        </Button>
+                                    </Link> : <ItemCount stock={stock} onConfirm={OnAdd} initial={initialValue} />}
                                 </CardFooter>
                             </CardBody>
                         </Card>

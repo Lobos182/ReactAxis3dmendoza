@@ -1,19 +1,27 @@
 import React from 'react'
 import './CartWidget.css'
 import '../ItemCount/ItemCount'
+import { useContext } from 'react';
+import CartContext from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 
 const CartWidget = (props) => {
+
+    const {getQuantity} = useContext(CartContext)
+    const count = getQuantity()
+
     return (
         <div>
-            <a type="button" href="#!" onClick={()=>console.log('hice click en Carrito')} className="d-flex">
+            
+            <Link type="button" to='/cart' className="d-flex">
                         <button className='btn-outline-dark'>
                             <i className='bi bi-cart4 me-2 icono'></i>                                                      
                             <span className='badge bg-dark text-white ms-2 rounded cantcarrito'>
-                                {props.cart}
+                                {count}
                             </span>
                         </button>
-                    </a>            
+                    </Link>            
         </div>
             )
 }
