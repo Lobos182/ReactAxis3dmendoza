@@ -13,6 +13,8 @@ const ItemDetailContainer = () => {
             setProduct(res)
         })
     }, [productoId])
+
+
     return (
         <div className='ItemDetailContainer'>
             <ItemDetail {...product} />

@@ -9,7 +9,7 @@ const Item = ({ id, nombre, precio, imagen, stock }) => {
         <Container>
             <Row>
                 <Col className='bg-light border'
-                    fluid>
+                    fluid='fluid'>
                     <div>
                         <CardGroup>
                             <Card>

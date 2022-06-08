@@ -16,7 +16,7 @@ const ItemDetail = ({ id, nombre, precio, imagen, stock }) => {
         <Container>
             <Row>
                 <Col className='bg-light border'
-                    fluid
+                    fluid='fluid'
                 >
                     <h2>Detalle del producto</h2>
                     <h2>{nombre}</h2>

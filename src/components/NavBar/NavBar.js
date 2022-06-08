@@ -20,13 +20,11 @@ const NavBar = (props) => {
                 dark
                 expand="md"
                 fixed=""
-                full
+                
             ><Link className='Link' to='/'>
-                    <NavbarBrand className='' href="/">
-
-                        <img src='./images/axis3d.jpg' width="80" height="auto" class=" d-inline-block align-text-center" alt='logo' />
+                    <NavbarBrand>
+                        <img src='./images/axis3d.jpg' width="80" height="auto" className=" d-inline-block align-text-center" alt='logo' />
                         Axis3DMendoza
-
                     </NavbarBrand>
                 </Link>
                 <NavbarToggler onClick={toggleNavbar} className="me-2" />
@@ -35,13 +33,14 @@ const NavBar = (props) => {
                         <NavItem className='navitem' href="#!">
                             <UncontrolledDropdown
                                 inNavbar
-                                nav>
+                                nav
+                                >
                                 <DropdownToggle
                                     caret
                                     nav>
                                     Productos
                                 </DropdownToggle>
-                                <DropdownMenu right>
+                                <DropdownMenu end>
                                     <DropdownItem>
                                         <Link className='Link' to='/categoria/animales'>
                                             Animales
