@@ -1,20 +1,21 @@
 import './NavBar.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CartWidget from '../CartWidget/CartWidget';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText,
     UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CartContext from '../../context/CartContext';
 
 
 
 
 const NavBar = (props) => {
     const [collapsed, setCollapsed] = useState(true);
-
-
+    const { getQuantity } = useContext(CartContext)
+    const count = getQuantity()
     const toggleNavbar = () => setCollapsed(!collapsed);
 
     return (
@@ -80,7 +81,7 @@ const NavBar = (props) => {
                     </Nav>
                 </Collapse>
                 <NavbarText>
-                    <CartWidget />
+                    {count > 0 && <CartWidget />}
                 </NavbarText>
             </Navbar>
         </div>

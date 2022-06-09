@@ -12,9 +12,8 @@ const CartWidget = (props) => {
     const count = getQuantity()
 
     return (
-        <div>
-                     
-            <Link type="button" to='/cart' className="d-flex">
+        <div>                     
+            <Link type="button"  to='/cart' className="d-flex">
                         <button className='btn-outline-dark'>
                             <i className='bi bi-cart4 me-2 icono'></i>                                                      
                             <span className='badge bg-dark text-white ms-2 rounded cantcarrito'>
