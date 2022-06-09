@@ -50,8 +50,8 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const removeAllItem = () => {
-        const newCart = cart.splice(0,cart.length)
-        setCart(newCart)
+        
+        setCart([])
     }
 
 

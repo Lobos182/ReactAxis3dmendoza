@@ -11,7 +11,7 @@ const Cart = () => {
             <h1>Carrito</h1>
             <div>
                 <div>
-                <button onClick={() => removeAllItem}>borrar carrito</button>
+                <button onClick={removeAllItem}>borrar carrito</button>
                 </div>
                 {cart.map(prod => {
                     return (

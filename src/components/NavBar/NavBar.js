@@ -9,8 +9,11 @@ import {
 import { Link } from 'react-router-dom';
 
 
+
+
 const NavBar = (props) => {
     const [collapsed, setCollapsed] = useState(true);
+
 
     const toggleNavbar = () => setCollapsed(!collapsed);
 
@@ -21,7 +24,7 @@ const NavBar = (props) => {
                 dark
                 expand="md"
                 fixed=""
-                
+
             ><Link className='Link' to='/'>
                     <NavbarBrand>
                         <img src='./images/axis3d.jpg' width="80" height="auto" className=" d-inline-block align-text-center" alt='logo' />
@@ -35,7 +38,7 @@ const NavBar = (props) => {
                             <UncontrolledDropdown
                                 inNavbar
                                 nav
-                                >
+                            >
                                 <DropdownToggle
                                     caret
                                     nav>
@@ -49,13 +52,13 @@ const NavBar = (props) => {
                                     </DropdownItem>
                                     <DropdownItem divider />
                                     <DropdownItem>
-                                    <Link className='Link' to='/categoria/accesorios'>
+                                        <Link className='Link' to='/categoria/accesorios'>
                                             Accesorios
                                         </Link>
                                     </DropdownItem>
                                     <DropdownItem divider />
                                     <DropdownItem>
-                                    <Link className='Link' to='/categoria/figuras'>
+                                        <Link className='Link' to='/categoria/figuras'>
                                             Figuras
                                         </Link>
                                     </DropdownItem>
@@ -63,7 +66,7 @@ const NavBar = (props) => {
                             </UncontrolledDropdown>
                         </NavItem>
                         <NavItem>
-                        <Link className='Link' to='/about'>
+                            <Link className='Link' to='/about'>
                                 <NavLink className='navitem' href="#!">
                                     Nosotros
                                 </NavLink>
@@ -73,11 +76,11 @@ const NavBar = (props) => {
                             <NavLink className='navitem' href="#!">
                                 Contacto
                             </NavLink>
-                        </NavItem>                        
+                        </NavItem>
                     </Nav>
                 </Collapse>
                 <NavbarText>
-                    <CartWidget cart='6' />
+                    <CartWidget />
                 </NavbarText>
             </Navbar>
         </div>

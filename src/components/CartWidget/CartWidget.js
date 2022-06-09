@@ -13,7 +13,7 @@ const CartWidget = (props) => {
 
     return (
         <div>
-            
+                     
             <Link type="button" to='/cart' className="d-flex">
                         <button className='btn-outline-dark'>
                             <i className='bi bi-cart4 me-2 icono'></i>                                                      
