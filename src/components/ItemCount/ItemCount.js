@@ -2,6 +2,7 @@ import { useState } from "react"
 import './ItemCount.css'
 import { Button } from 'reactstrap';
 
+
 const ItemCount = ({ onConfirm, stock, initial = 1 }) => {
 
     const [count, setCount] = useState(initial)

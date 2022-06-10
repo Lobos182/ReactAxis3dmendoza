@@ -42,7 +42,7 @@ const Item = ({ id, nombre, precio, imagen, stock }) => {
                                     </CardSubtitle>
                                     <Link to={`/detalle/${id}`}>
                                         <Button>
-                                            Ver detalle
+                                            Detalle
                                         </Button>
                                     </Link>
                                 </CardBody>
